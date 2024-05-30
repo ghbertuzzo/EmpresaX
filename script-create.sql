@@ -18,8 +18,6 @@ CREATE TABLE produtos (
 
 CREATE TABLE vendas (
     id SERIAL PRIMARY KEY,
-
-    ,
     cliente_id INT NOT NULL,
     data_venda TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (cliente_id) REFERENCES clientes (id)
@@ -40,3 +38,4 @@ CREATE INDEX idx_produto_nome ON produtos (nome);
 CREATE INDEX idx_venda_cliente ON vendas (cliente_id);
 CREATE INDEX idx_itens_venda_venda ON itens_venda (venda_id);
 CREATE INDEX idx_itens_venda_produto ON itens_venda (produto_id);
+
