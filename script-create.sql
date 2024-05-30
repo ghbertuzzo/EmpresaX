@@ -38,3 +38,4 @@ CREATE INDEX idx_produto_nome ON produtos (nome);
 CREATE INDEX idx_venda_cliente ON vendas (cliente_id);
 CREATE INDEX idx_itens_venda_venda ON itens_venda (venda_id);
 CREATE INDEX idx_itens_venda_produto ON itens_venda (produto_id);
+
