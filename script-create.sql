@@ -18,8 +18,6 @@ CREATE TABLE produtos (
 
 CREATE TABLE vendas (
     id SERIAL PRIMARY KEY,
-
-    ,
     cliente_id INT NOT NULL,
     data_venda TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (cliente_id) REFERENCES clientes (id)
