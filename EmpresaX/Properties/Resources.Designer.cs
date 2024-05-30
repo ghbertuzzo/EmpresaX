@@ -69,5 +69,14 @@ namespace EmpresaX.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Host=127.0.0.1;Port=5432;Database=empresa_x;Username=postgres;Password=admin.
+        /// </summary>
+        internal static string strConexao {
+            get {
+                return ResourceManager.GetString("strConexao", resourceCulture);
+            }
+        }
     }
 }

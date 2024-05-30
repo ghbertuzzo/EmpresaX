@@ -121,4 +121,7 @@
   <data name="delete64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\UI\Imgs\delete64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="strConexao" xml:space="preserve">
+    <value>Host=127.0.0.1;Port=5432;Database=empresa_x;Username=postgres;Password=admin</value>
+  </data>
 </root>

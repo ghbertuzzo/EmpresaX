@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace EmpresaX.Data.Context
 
         public AppDbContext()
         {
-            _connectionString = "Host=127.0.0.1;Port=5432;Database=empresa_x;Username=postgres;Password=admin";
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
         public IDbConnection GetConnection()
