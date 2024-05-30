@@ -1,5 +1,5 @@
-﻿using EmpresaX.Data.Context;
-using Dapper;
+﻿using Dapper;
+using EmpresaX.Data.Context;
 using EmpresaX.Data.Entities;
 
 namespace EmpresaX.Data.Repositories

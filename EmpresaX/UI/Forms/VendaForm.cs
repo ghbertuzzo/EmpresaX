@@ -1,16 +1,6 @@
 ﻿using EmpresaX.Data.Entities;
 using EmpresaX.UI.Controls;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace EmpresaX.UI.Forms
 {
@@ -117,7 +107,8 @@ namespace EmpresaX.UI.Forms
                 dgvItensVenda.Rows.RemoveAt(rowIndex);
                 totalValue -= subtotal;
                 lblTotalValue.Text = totalValue?.ToString("N2");
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }

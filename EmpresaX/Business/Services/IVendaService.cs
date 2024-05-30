@@ -1,9 +1,4 @@
 ﻿using EmpresaX.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmpresaX.Business.Services
 {
@@ -14,5 +9,5 @@ namespace EmpresaX.Business.Services
         IEnumerable<Venda> GetAllVendas();
         IEnumerable<VendaDetalhada> GetAllVendasReport();
     }
-    
+
 }

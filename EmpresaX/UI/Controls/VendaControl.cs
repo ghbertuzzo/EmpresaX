@@ -1,10 +1,5 @@
-﻿using EmpresaX.Data.Entities;
-using EmpresaX.Business.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EmpresaX.Business.Services;
+using EmpresaX.Data.Entities;
 
 namespace EmpresaX.UI.Controls
 {

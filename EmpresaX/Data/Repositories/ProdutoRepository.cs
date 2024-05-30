@@ -1,6 +1,6 @@
-﻿using EmpresaX.Data.Context;
+﻿using Dapper;
+using EmpresaX.Data.Context;
 using EmpresaX.Data.Entities;
-using Dapper;
 
 namespace EmpresaX.Data.Repositories
 {

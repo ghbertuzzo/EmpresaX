@@ -3,6 +3,7 @@ using EmpresaX.Data.Context;
 using EmpresaX.Data.Repositories;
 using EmpresaX.UI.Controls;
 using EmpresaX.UI.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EmpresaX
 {
@@ -23,21 +24,41 @@ namespace EmpresaX
 
             var dbContext = new AppDbContext();
 
-            var clienteRepository = new ClienteRepository(dbContext);
-            var clienteService = new ClienteService(clienteRepository);
-            var clienteControl = new ClienteControl(clienteService);
+            var services = ConfigureServices();
+            var serviceProvider = services.BuildServiceProvider();
 
-            var produtoRepository = new ProdutoRepository(dbContext);
-            var produtoService = new ProdutoService(produtoRepository);
-            var produtoControl = new ProdutoControl(produtoService);
+            var mainForm = serviceProvider.GetRequiredService<MainForm>();
 
-            var vendaRepository = new VendaRepository(dbContext);
-            var vendaService = new VendaService(vendaRepository, produtoRepository);
-            var vendaControl = new VendaControl(vendaService);
+            Application.Run(mainForm);
 
-            var mainFrame = new MainForm(clienteControl,produtoControl,vendaControl);
-            Application.Run(mainFrame);
+        }
 
+        private static IServiceCollection ConfigureServices()
+        {
+            var services = new ServiceCollection();
+
+            // Register context
+            services.AddSingleton<AppDbContext>();
+
+            // Register repositories
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IVendaRepository, VendaRepository>();
+
+            // Register services
+            services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IVendaService, VendaService>();
+
+            // Register controls
+            services.AddScoped<ClienteControl>();
+            services.AddScoped<ProdutoControl>();
+            services.AddScoped<VendaControl>();
+
+            // Register forms
+            services.AddScoped<MainForm>();
+
+            return services;
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

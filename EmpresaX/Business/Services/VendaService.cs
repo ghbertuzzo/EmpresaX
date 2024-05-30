@@ -1,6 +1,6 @@
-﻿using EmpresaX.Data.Entities;
+﻿using EmpresaX.Business.Validators;
+using EmpresaX.Data.Entities;
 using EmpresaX.Data.Repositories;
-using EmpresaX.Business.Validators;
 
 namespace EmpresaX.Business.Services
 {
